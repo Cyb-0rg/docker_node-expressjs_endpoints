@@ -5,3 +5,4 @@ index.js
 
 # Ignore all files under the node_modules folder
 node_modules/
+*.txt
