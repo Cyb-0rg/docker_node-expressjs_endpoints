@@ -32,12 +32,14 @@ let products = [
 app.get('', (req, res) => {
     //res.send("list of endpoints: ");
     res.json(endPoints);
+    console.table(endPoints);
   });
 
 
 // GET /api/products - Retrieves a list of products
 app.get('/api/products', (req, res) => {
   res.json(products);
+  console.log(products);
 });
 
 
@@ -48,9 +50,28 @@ app.post('/api/products', (req, res) => {
   res.json(newProduct);
 });
 
+// Define a route for adding a new product
+app.post('/api/addProduct', (req, res) => {
+  // Extract product details from query parameters
+  const { id, name } = req.query;
+
+  // Create a new product object
+  const product = {
+    id: parseInt(id) ,
+    name: name
+  };
+
+  // Add the product object to the products array
+  products.push(product);
+
+  // Send a response with the added product
+  res.json({ message: 'Product added successfully', product: product });
+});
+
 // GET /api/products/:id - Retrieves a single product by ID
 app.get('/api/products/:id', (req, res) => {
   const productId = parseInt(req.params.id);
+  console.log(`productID: ${productId}`);
   const product = products.find(p => p.id === productId);
   if (product) {
     res.json(product);
@@ -123,7 +144,7 @@ app.trace('/api/products', (req, res) => {
 
 // Catch-all route for handling unknown routes
 app.all('*', (req, res) => {
-  //res.send(`http://localhost:${port}/home`);
+  //res.send(`http://localhost:${port}/`);
   res.status(404).json({ error: 'Route not found' });
 });
 
