@@ -55,7 +55,7 @@ docker push your-image-name
  </pre>
 Update the Docker Hub readme and provide instructions for how to use the customized Docker image, including pulling the image, running a container, and accessing the endpoints.
 
-### License
+### License 
 This Docker image and the accompanying Node.js application are released under the [MIT License](https://github.com/dockerfile/nodejs/blob/master/LICENSE) .
 
 Feel free to customize and use this Docker image for your own projects according to the terms of the license.
