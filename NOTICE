@@ -1,0 +1,22 @@
+NOTICE
+
+This project uses third-party software or content that is subject to different licenses and terms of use. Please refer to the following list for details:
+
+- Node.js: https://nodejs.org/
+  License: The Node.js project is licensed under the MIT License. Please refer to the LICENSE file in the Node.js repository for more information.
+
+- Docker: https://www.docker.com/
+  License: Docker is released under the Apache License, Version 2.0. Please refer to the LICENSE file in the Docker repository for more information.
+
+- Express.js: https://expressjs.com/
+  License: Express.js is released under the MIT License. Please refer to the LICENSE file in the Express.js repository for more information.
+
+- Other Third-Party Libraries:
+  This project may use other third-party libraries or dependencies. Please refer to the respective repositories or documentation for their licenses and terms of use.
+
+Attributions:
+
+- This project is based on the "node_endpoints" repository by [https://github.com/Cyb-0rg/], available at [https://github.com/Cyb-0rg/docker_node-expressjs_endpoints], which is licensed under the [https://github.com/Cyb-0rg/docker_node-expressjs_endpoints/blob/main/LICENSE] license.
+
+
+Please review and comply with the licenses and terms of use for the third-party software or content used in this project. Proper attribution and compliance with licenses are important to respect the rights and efforts of the original authors or contributors and to comply with applicable legal requirements.
