@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Product API
+  description: API for managing products
+paths:
+  /api/products:
+    get:
+      summary: Retrieves a list of products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+    post:
+      summary: Creates a new product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+  /api/products/{id}:
+    get:
+      summary: Retrieves a single product by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+        '404':
+          description: Product not found
+    put:
+      summary: Updates a product by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+        '404':
+          description: Product not found
+    patch:
+      summary: Partially updates a product by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+        '404':
+          description: Product not found
+    delete:
+      summary: Deletes a product by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the product
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '404':
+          description: Product not found
+  /api/products:
+    options:
+      summary: Implementation for OPTIONS method
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  methods:
+                    type: array
+                    items:
+                      type: string
